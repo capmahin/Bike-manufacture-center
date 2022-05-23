@@ -28,9 +28,9 @@ const BusinessSummary = () => {
   ];
   return (
     <section className="my-28">
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <div>
-          <h4 className="text-xl text-primary font-bold">Summary</h4>
+          <h1 className="text-4xl text-primary font-bold">Summary</h1>
           <h2 className="text-3xl">What our customers reviews</h2>
         </div>
         <div>
