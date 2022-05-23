@@ -9,21 +9,24 @@ const Services = () => {
     {
       _id: 1,
       name: "Engine",
-      description: "",
+      description:
+        "The Royal Enfield Bullet has the longest unchanged production run of any motorcycle having remained continuously in production since 1948. The Bullet marque is even older, and has passed 75 years of continuous production.",
       img: engine,
       price: 120000,
     },
     {
       _id: 2,
       name: "Spear",
-      description: "",
+      description:
+        "Robust aluminum anodized for enhanced durability and impact protection. Safeguards vulnerable braking components.",
       img: spear,
       price: 150000,
     },
     {
       _id: 3,
       name: "Wheel",
-      description: "",
+      description:
+        "Its frame was also considerably different, having centre-spring girder front forks, being among a new range of models from Royal Enfield that featured them, along with a saddle-type fuel tank. However, common to motorcycles of this period, it had a rigid rear-end, necessitating a 'sprung' seat for the rider, which resulted in the iconic look of the motorcycle that is much replicated today, even though the sprung seat is unnecessary in modern models.",
       img: wheel,
       price: 110000,
     },

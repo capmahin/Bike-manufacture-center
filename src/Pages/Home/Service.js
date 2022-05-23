@@ -9,7 +9,7 @@ const Service = ({ service }) => {
       <div class="card-body">
         <h2 class="card-title">{service.name}</h2>
         <h4 class="card-title">{service.price}</h4>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>{service.description}</p>
         <div class="card-actions justify-end">
           <button class="btn btn-primary">Book Now !</button>
         </div>

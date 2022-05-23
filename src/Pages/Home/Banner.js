@@ -1,9 +1,10 @@
 import React from "react";
 import bike from "../../assets/Images/Royal-enfield.jpg";
+import PrimaryButton from "../Shared/PrimaryButton";
 
 const Banner = () => {
   return (
-    <div class="hero min-h-screen px-12 ">
+    <div class="hero min-h-screen ">
       <div class="hero-content flex-col lg:flex-row">
         <img src={bike} class="max-w-sm rounded-lg shadow-2xl" />
         <div>
@@ -13,9 +14,7 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button class="btn btn-primary uppercase text-black font-bold bg-gradient-to-r from-gray-400 to-blue-500 hover:from-blue-500 hover:to-gray-500">
-            Get Started
-          </button>
+          <PrimaryButton>Get Started</PrimaryButton>
         </div>
       </div>
     </div>
