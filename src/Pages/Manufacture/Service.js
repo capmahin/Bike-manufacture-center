@@ -1,6 +1,6 @@
 import React from "react";
 
-const Service = ({ service }) => {
+const Service = ({ service, setFixing }) => {
   const { name, description, img, price, minimum_quantity } = service;
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
@@ -23,12 +23,14 @@ const Service = ({ service }) => {
           {minimum_quantity.length > 1 ? "spaces" : "spaces"} available
         </h4>
         <div class="card-actions">
-          <button
+          <label
+            for="booking-modal"
             disabled={minimum_quantity.length === 0}
-            class="btn btn-secondary text-black uppercase"
+            onClick={() => setFixing(service)}
+            class=" btn btn-secondary text-black uppercase"
           >
             Book Now!
-          </button>
+          </label>
         </div>
       </div>
     </div>
