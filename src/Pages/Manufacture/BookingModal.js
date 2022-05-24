@@ -14,10 +14,38 @@ const BookingModal = ({ fixing }) => {
             ✕
           </label>
           <h3 class="font-bold text-lg text-secondary">Booking For!!:{name}</h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <form>
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="submit"
+              value="submit"
+              class="btn btn-secondary w-full max-w-xs"
+            />
+          </form>
           <div class="modal-action">
             <label for="booking-modal" class="btn">
               Yay!
