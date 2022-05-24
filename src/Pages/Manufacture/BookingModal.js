@@ -1,7 +1,14 @@
 import React from "react";
+import { format } from "date-fns";
 
-const BookingModal = ({ fixing }) => {
-  const { name, minimum_quantity } = fixing;
+const BookingModal = ({ date, fixing, setFixing }) => {
+  const { _id, name, minimum_quantitys } = fixing;
+  const handleBooking = (event) => {
+    event.preventDefault();
+    const minimum_quantity = event.target.minimum_quantity.value;
+    console.log(_id, name, minimum_quantity);
+    setFixing(null);
+  };
   return (
     <div>
       <input type="checkbox" id="booking-modal" class="modal-toggle" />
@@ -14,30 +21,40 @@ const BookingModal = ({ fixing }) => {
             ✕
           </label>
           <h3 class="font-bold text-lg text-secondary">Booking For!!:{name}</h3>
-          <form>
+          <form
+            onSubmit={handleBooking}
+            className="grid grid-cols-1 gap-3 justify-items-center mt-2"
+          >
             <input
               type="text"
-              placeholder="Type here"
+              disabled
+              value={format(date, "PP")}
+              class="input input-bordered w-full max-w-xs"
+            />
+            <select
+              name="minimum_quantity"
+              class="select select-bordered w-full max-w-xs"
+            >
+              {minimum_quantitys.map((minimum_quantity) => (
+                <option value={minimum_quantity}>{minimum_quantity}</option>
+              ))}
+            </select>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
               class="input input-bordered w-full max-w-xs"
             />
             <input
               type="text"
-              placeholder="Type here"
-              class="input input-bordered w-full max-w-xs"
-            />
-            <input
-              type="text"
-              placeholder="Type here"
-              class="input input-bordered w-full max-w-xs"
-            />
-            <input
-              type="text"
-              placeholder="Type here"
-              class="input input-bordered w-full max-w-xs"
-            />
-            <input
-              type="text"
-              placeholder="Type here"
+              name="phone"
+              placeholder="Phone Number"
               class="input input-bordered w-full max-w-xs"
             />
             <input
@@ -46,11 +63,6 @@ const BookingModal = ({ fixing }) => {
               class="btn btn-secondary w-full max-w-xs"
             />
           </form>
-          <div class="modal-action">
-            <label for="booking-modal" class="btn">
-              Yay!
-            </label>
-          </div>
         </div>
       </div>
     </div>

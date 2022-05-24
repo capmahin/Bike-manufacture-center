@@ -27,7 +27,13 @@ const AvailableManufacture = ({ date }) => {
           ></Service>
         ))}
       </div>
-      {fixing && <BookingModal fixing={fixing}></BookingModal>}
+      {fixing && (
+        <BookingModal
+          date={date}
+          fixing={fixing}
+          setFixing={setFixing}
+        ></BookingModal>
+      )}
     </div>
   );
 };
