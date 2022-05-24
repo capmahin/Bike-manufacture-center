@@ -1,0 +1,57 @@
+[
+    {
+      "_id": "1",
+      "img": "https://previews.123rf.com/images/prill/prill1110/prill111002576/10914273-front-wheel-of-a-motorbike.jpg",
+      "name": "Wheel",
+      "description": "Motorcycle wheels are made to cope with radial and axial forces. They also provide a way of mounting other critical components such as the brakes, final drive and suspension. Wheels, and anything directly connected to them, are considered to be unsprung mass. ",
+      "price": 1000,
+      "minimum_quantity": 1,
+      "available_quantity": 2
+    },
+    {
+      "_id": "2",
+      "img": "https://ae01.alicdn.com/kf/HTB1aw4lXHj1gK0jSZFOq6A7GpXaz/Motorcycle-Speaker-Bluetooth-V2-1-EDR-Audio-Water-resistant-Motorbike-Stereo-Speaker-Moto-FM-Radio-AUX.jpg",
+      "name": "Speaker",
+      "description": "Globally, motorcycles are comparably popular to cars as a method of transport. In 2021, approximately 58.6 million new motorcycles were sold around the world,",
+      "price": 5100,
+      "minimum_quantity": 1,
+      "available_quantity": ""
+    },
+    {
+      "_id": "3",
+      "img": "https://image.made-in-china.com/44f3j00UcmaqsjBCHrY/Motorcycle-Muffler-Silencer-Pipe-for-Harley-Parts.jpg",
+      "name": "Silencer",
+      "description": "It works by using the pulses of high pressure created when exhaust is expelled from the combustion chamber. If a proportion of these pulses can be reflected from the exhaust back towards the engine at the right time, the high-pressure wave will stop some of the unburnt mixture from escaping before it's ignited.",
+      "price": 100,
+      "minimum_quantity": 1,
+      "available_quantity": ""
+    },
+    {
+      "_id": "4",
+      "img": "https://i.pinimg.com/564x/49/c9/99/49c999f91e0dc874839d4efe1302d976.jpg",
+      "name": "Spear",
+      "description": "Now, let's view the various wholesale motorcycle spear parts options available here. Thanks to the deals and discounts provided by multiple sellers",
+      "price": 3100,
+      "minimum_quantity": 1,
+      "available_quantity": ""
+    },
+    {
+      "_id": "5",
+      "img": "https://image.made-in-china.com/43f34j00IvuEbGVPqwgT/Tianda-156fmi-F28-125cc-Motorcycle-Engine-Assembley-F28-CG125-.jpg",
+      "name": "Engine",
+      "description": "A motorcycle engine is an engine that powers a motorcycle. Motorcycle engines are typically two-stroke or four-stroke internal combustion engines, but other engine types, such as Wankels and electric motors, have been used.",
+      "price": 77100,
+      "minimum_quantity": 1,
+      "available_quantity": ""
+    },
+    {
+      "_id": "6",
+      "img": "https://bongshal.com/public/uploads/all/x3AgGXLV4x4hYhoRWSVJ2yQzD1p9c4PIAZkEyonf.jpg",
+      "name": "Engine Gard",
+      "description": "Engine guards are hoop shaped bars usually mounted on motorcycle frames at the front in order to protect the engine mainly and also to protect the rider for bike accidents at slower speeds. Engine guards are also called as 'Crash Bars'.",
+      "price": 12100,
+      "minimum_quantity": 1,
+      "available_quantity": ""
+    }
+    
+  ]

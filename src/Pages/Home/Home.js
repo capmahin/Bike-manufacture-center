@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
-import Footer from "./Footer";
+import Footer from "../Shared/Footer";
 
 import Info from "./Info";
 import Manufacture from "./Manufacture";
@@ -9,7 +9,7 @@ import Services from "./Services";
 
 const Home = () => {
   return (
-    <div className="px-12">
+    <div>
       <Banner></Banner>
       <Info></Info>
       <Services></Services>
