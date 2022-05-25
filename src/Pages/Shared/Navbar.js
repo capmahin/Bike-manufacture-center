@@ -32,7 +32,7 @@ const Navbar = () => {
 
       <li>
         {user ? (
-          <button class="btn btn-ghost" onClick={logout}>
+          <button className="btn btn-ghost" onClick={logout}>
             Sign Out
           </button>
         ) : (

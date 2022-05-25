@@ -24,7 +24,7 @@ const Service = ({ service, setFixing }) => {
         </h4>
         <div className="card-actions">
           <label
-            for="booking-modal"
+            htmlFor="booking-modal"
             disabled={minimum_quantitys.length === 0}
             onClick={() => setFixing(service)}
             className=" btn btn-secondary text-black uppercase"
