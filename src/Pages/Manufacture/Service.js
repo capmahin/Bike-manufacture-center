@@ -3,12 +3,12 @@ import React from "react";
 const Service = ({ service, setFixing }) => {
   const { name, description, img, price, minimum_quantitys } = service;
   return (
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src={img} alt="" class="rounded-xl" />
+    <div className="card w-96  bg-base-100 shadow-xl">
+      <figure className="px-10 pt-10">
+        <img src={img} alt="" className="rounded-xl" />
       </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title text-secondary">{name}</h2>
+      <div className="card-body items-center text-center">
+        <h2 className=" text-2xl font-bold text-secondary">{name}</h2>
         <p>{description}</p>
         <h4>{price}</h4>
         <h4>
@@ -22,12 +22,12 @@ const Service = ({ service, setFixing }) => {
           {minimum_quantitys.length}
           {minimum_quantitys.length > 1 ? "spaces" : "spaces"} available
         </h4>
-        <div class="card-actions">
+        <div className="card-actions">
           <label
             for="booking-modal"
             disabled={minimum_quantitys.length === 0}
             onClick={() => setFixing(service)}
-            class=" btn btn-secondary text-black uppercase"
+            className=" btn btn-secondary text-black uppercase"
           >
             Book Now!
           </label>
