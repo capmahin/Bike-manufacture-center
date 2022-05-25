@@ -2,15 +2,45 @@ import React from "react";
 import { format } from "date-fns";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const BookingModal = ({ date, fixing, setFixing }) => {
   const { _id, name, minimum_quantitys } = fixing;
   const [user, loading, error] = useAuthState(auth);
+  const formattedDate = format(date, "PP");
   const handleBooking = (event) => {
     event.preventDefault();
     const minimum_quantity = event.target.minimum_quantity.value;
     console.log(_id, name, minimum_quantity);
-    setFixing(null);
+
+    const booking = {
+      fixingId: _id,
+      fixing: name,
+      date: formattedDate,
+      minimum_quantity,
+      buyer: user.email,
+      buyerName: user.displayName,
+      phone: event.target.phone.value,
+    };
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          toast(`Booking is done,${formattedDate} to ${minimum_quantity}`);
+        } else {
+          toast.error(
+            `You Already Booking this ,${data.booking?.date} to ${data.booking?.minimum_quantity}`
+          );
+        }
+        setFixing(null);
+      });
   };
   return (
     <div>
