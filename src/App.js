@@ -8,6 +8,7 @@ import Login from "./Pages/Login/Login";
 
 import Manufacture from "./Pages/Manufacture/Manufacture";
 import SignUp from "./Pages/Login/SignUp";
+import RequireAuth from "./Pages/Login/RequireAuth";
 
 function App() {
   return (
@@ -18,7 +19,14 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="manufacture" element={<Manufacture />} />
+        <Route
+          path="manufacture"
+          element={
+            <RequireAuth>
+              <Manufacture />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );
