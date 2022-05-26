@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+#this side is about bike manufacturing center
+#engine,part,spare-part,wheel etc
+#we use here
+#react-router-dom,react-router,react-query,daisyui,react-hooks
+site:[https://assignment-12-dfa93.web.app/]
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
