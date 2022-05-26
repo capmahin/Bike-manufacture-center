@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 
-const BookingModal = ({ date, fixing, setFixing }) => {
+const BookingModal = ({ date, fixing, setFixing, refetch }) => {
   const { _id, name, minimum_quantitys } = fixing;
   const [user, loading, error] = useAuthState(auth);
   const formattedDate = format(date, "PP");
@@ -39,6 +39,7 @@ const BookingModal = ({ date, fixing, setFixing }) => {
             `You Already Booking this ,${data.booking?.date} to ${data.booking?.minimum_quantity}`
           );
         }
+        refetch();
         setFixing(null);
       });
   };
