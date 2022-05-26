@@ -20,6 +20,7 @@ import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import NotFound from "./Pages/Shared/NotFound";
+import Blogs from "./Pages/Blogs'/Blogs";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="portfolio" element={<MyPortfolio />} />
+        <Route path="blogs" element={<Blogs />} />
 
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
