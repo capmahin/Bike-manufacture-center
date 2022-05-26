@@ -18,6 +18,8 @@ import MyReview from "./Pages/Dashboard/MyReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
+import NotFound from "./Pages/Shared/NotFound";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="portfolio" element={<MyPortfolio />} />
+
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route
@@ -56,6 +60,7 @@ function App() {
             }
           ></Route>
         </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
