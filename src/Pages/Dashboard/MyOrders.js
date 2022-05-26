@@ -28,9 +28,9 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((o) => (
+            {orders.map((o, index) => (
               <tr>
-                <th>1</th>
+                <th>{index + 1}</th>
                 <td>{o.buyerName}</td>
                 <td>{o.date}</td>
                 <td>{o.fixing}</td>
