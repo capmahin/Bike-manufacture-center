@@ -1,5 +1,5 @@
 import React from "react";
-import bike from "../../assets/Images/Royal-enfield.jpg";
+import bike from "../../assets/Images/Royal.jpg";
 import PrimaryButton from "../Shared/PrimaryButton";
 
 const Banner = () => {

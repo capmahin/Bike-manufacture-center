@@ -1,8 +1,13 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import business from "../../assets/Images/business.jpg";
 import PrimaryButton from "../Shared/PrimaryButton";
 
 const Manufacture = () => {
+  const navigate = useNavigate();
+  const navigateReviews = () => {
+    navigate("/reviews");
+  };
   return (
     <section className="flex justify-center items-center">
       <div className="flex-1">
@@ -17,7 +22,9 @@ const Manufacture = () => {
           the oldest global motorcycle brand in continuous production, and
           operates manufacturing plants in Chennai in India.
         </p>
-        <PrimaryButton>Get Started</PrimaryButton>
+        <Link to="/reviews" onClick={navigateReviews}>
+          <PrimaryButton>Get Started</PrimaryButton>
+        </Link>
       </div>
     </section>
   );

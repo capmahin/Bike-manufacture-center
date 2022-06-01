@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Service = ({ service, setFixing }) => {
   const { name, description, img, price, minimum_quantitys } = service;
+
   return (
     <div className="card w-96  bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -29,7 +31,7 @@ const Service = ({ service, setFixing }) => {
             onClick={() => setFixing(service)}
             className=" btn btn-secondary text-black uppercase"
           >
-            Book Now!
+            Book!!!
           </label>
         </div>
       </div>
