@@ -6,7 +6,7 @@ import PrimaryButton from "../Shared/PrimaryButton";
 const Manufacture = () => {
   const navigate = useNavigate();
   const navigateReviews = () => {
-    navigate("/reviews");
+    navigate("/review");
   };
   return (
     <section className="flex justify-center items-center">
@@ -22,7 +22,7 @@ const Manufacture = () => {
           the oldest global motorcycle brand in continuous production, and
           operates manufacturing plants in Chennai in India.
         </p>
-        <Link to="/reviews" onClick={navigateReviews}>
+        <Link to="/review" onClick={navigateReviews}>
           <PrimaryButton>Get Started</PrimaryButton>
         </Link>
       </div>

@@ -22,8 +22,9 @@ import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import NotFound from "./Pages/Shared/NotFound";
 import Blogs from "./Pages/Blogs'/Blogs";
 import Review from "./Pages/Home/Review";
-import Reviews from "./Pages/Reviews/Reviews";
+
 import Contect from "./Pages/Contect/Contect";
+import Review1 from "./Pages/Reviews/Review1";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contect />} />
-        <Route path="reviews" element={<Reviews></Reviews>} />
+        <Route path="review" element={<Review1></Review1>} />
         <Route path="about" element={<About />} />
         <Route path="portfolio" element={<MyPortfolio />} />
         <Route path="blogs" element={<Blogs />} />
