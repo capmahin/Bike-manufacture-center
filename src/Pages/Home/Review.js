@@ -5,7 +5,7 @@ const Review = ({ review }) => {
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <div className="card-body">
         <p>
-          In 1990, Royal Enfield collaborated with the Eicher Group, an
+          In 1990, Royal Enfield collaborated with the jake Group, an
           automotive company in India, and merged with it in 1994. Apart from
           bikes, Eicher Group is involved in the production and sales of
           commercial vehicles and automotive gears. Although Royal Enfield
