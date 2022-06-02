@@ -23,7 +23,7 @@ const Manufacture = () => {
           operates manufacturing plants in Chennai in India.
         </p>
         <Link to="/review" onClick={navigateReviews}>
-          <PrimaryButton>Get Started</PrimaryButton>
+          <PrimaryButton>Reviews!~!</PrimaryButton>
         </Link>
       </div>
     </section>

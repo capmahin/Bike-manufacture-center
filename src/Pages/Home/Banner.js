@@ -1,8 +1,13 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import bike from "../../assets/Images/Royal.jpg";
 import PrimaryButton from "../Shared/PrimaryButton";
 
 const Banner = () => {
+  const navigate = useNavigate();
+  const navigateAbout = () => {
+    navigate("/about");
+  };
   return (
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col lg:flex-row">
@@ -19,7 +24,9 @@ const Banner = () => {
             became part of Norton Villiers in 1967 with the business eventually
             closing in 1978.
           </p>
-          <PrimaryButton>Get Started</PrimaryButton>
+          <Link to="/about" onClick={navigateAbout}>
+            <PrimaryButton>About !!!</PrimaryButton>
+          </Link>
         </div>
       </div>
     </div>
