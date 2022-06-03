@@ -26,6 +26,8 @@ import Review from "./Pages/Home/Review";
 import Contect from "./Pages/Contect/Contect";
 import Review1 from "./Pages/Reviews/Review1";
 
+import AddMechanic from "./Pages/Dashboard/AddMechanic";
+
 function App() {
   return (
     <div className="max-w-7xl mx-auto px-12">
@@ -64,6 +66,14 @@ function App() {
             element={
               <RequireAdmin>
                 <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addMechanic"
+            element={
+              <RequireAdmin>
+                <AddMechanic></AddMechanic>
               </RequireAdmin>
             }
           ></Route>
