@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const AddMechanic = () => {
   const {
@@ -7,11 +9,15 @@ const AddMechanic = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const { data: services, isLoading } = useQuery("services", () =>
+    fetch("http://localhost:5000/service").then((res) => res.json())
+  );
   const onSubmit = async (data) => {
-    console.log(data);
-
-    console.log("update done");
+    console.log("data", data);
   };
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <h2 className="text-3xl">Add to Mechanic</h2>
@@ -75,29 +81,13 @@ const AddMechanic = () => {
           <label className="label">
             <span className="label-text">Specialty</span>
           </label>
-          <input
-            type="text"
-            placeholder="Your Specialty"
-            className="input input-bordered w-full max-w-xs"
-            {...register("specialty", {
-              required: {
-                value: true,
-                message: "Specialization is Required",
-              },
-            })}
-          />
-          <label className="label">
-            {errors.password?.type === "required" && (
-              <span className="label-text-alt text-red-500">
-                {errors.password.message}
-              </span>
-            )}
-            {errors.password?.type === "minLength" && (
-              <span className="label-text-alt text-red-500">
-                {errors.password.message}
-              </span>
-            )}
-          </label>
+          <select {...register("specialty")} class="select w-full max-w-xs">
+            {services.map((service) => (
+              <option key={service._id} value={service.name}>
+                {service.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <input
