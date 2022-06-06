@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
+import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
 
 const AddMechanic = () => {
@@ -8,6 +9,7 @@ const AddMechanic = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/service").then((res) => res.json())
@@ -33,8 +35,24 @@ const AddMechanic = () => {
             specialty: data.specialty,
             img: img,
           };
+          fetch("http://localhost:5000/mechanic", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(mechanic),
+          })
+            .then((res) => res.json())
+            .then((inserted) => {
+              if (inserted.insertedId) {
+                toast.success("Mechanic added successfully");
+                reset();
+              } else {
+                toast.error("Failed to add the mechanic");
+              }
+            });
         }
-        console.log("imagebb", result);
       });
   };
   if (isLoading) {
