@@ -25,6 +25,15 @@ const AddMechanic = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        if (result) {
+          const img = result.data.url;
+          const mechanic = {
+            name: data.name,
+            email: data.email,
+            specialty: data.specialty,
+            img: img,
+          };
+        }
         console.log("imagebb", result);
       });
   };
