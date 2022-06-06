@@ -12,8 +12,21 @@ const AddMechanic = () => {
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/service").then((res) => res.json())
   );
+  const imageStorageKey = "2607d506c9a008366c74644e1f8df27e";
+
   const onSubmit = async (data) => {
-    console.log("data", data);
+    const image = data.image[0];
+    const fromData = new FormData();
+    fromData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: fromData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log("imagebb", result);
+      });
   };
   if (isLoading) {
     return <Loading></Loading>;
