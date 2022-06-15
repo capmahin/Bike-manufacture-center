@@ -12,7 +12,9 @@ const AddMechanic = () => {
     reset,
   } = useForm();
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/service").then((res) => res.json())
+    fetch("https://stark-caverns-25730.herokuapp.com/service").then((res) =>
+      res.json()
+    )
   );
   const imageStorageKey = "2607d506c9a008366c74644e1f8df27e";
 
@@ -121,7 +123,10 @@ const AddMechanic = () => {
           <label className="label">
             <span className="label-text">Specialty</span>
           </label>
-          <select {...register("specialty")} class="select w-full max-w-xs">
+          <select
+            {...register("specialty")}
+            class="select input-bordered w-full max-w-xs"
+          >
             {services.map((service) => (
               <option key={service._id} value={service.name}>
                 {service.name}

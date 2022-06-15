@@ -27,6 +27,7 @@ import Contect from "./Pages/Contect/Contect";
 import Review1 from "./Pages/Reviews/Review1";
 
 import AddMechanic from "./Pages/Dashboard/AddMechanic";
+import MangeMechanic from "./Pages/Dashboard/MangeMechanic";
 
 function App() {
   return (
@@ -74,6 +75,14 @@ function App() {
             element={
               <RequireAdmin>
                 <AddMechanic></AddMechanic>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageMechanic"
+            element={
+              <RequireAdmin>
+                <MangeMechanic></MangeMechanic>
               </RequireAdmin>
             }
           ></Route>
