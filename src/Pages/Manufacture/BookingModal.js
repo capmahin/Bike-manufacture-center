@@ -22,7 +22,7 @@ const BookingModal = ({ date, fixing, setFixing, refetch }) => {
       buyerName: user.displayName,
       phone: event.target.phone.value,
     };
-    fetch("https://stark-caverns-25730.herokuapp.com/booking", {
+    fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
