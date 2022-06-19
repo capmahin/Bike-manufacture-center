@@ -1,9 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DeleteConfirmModal from "./DeleteConfirmModal";
 import MechanicRow from "./MechanicRow";
 
 const MangeMechanic = () => {
+  const [deletingMechanic, setDeletingMechanic] = useState(null);
   const {
     data: mechanics,
     isLoading,
@@ -40,11 +43,19 @@ const MangeMechanic = () => {
                 mechanic={mechanic}
                 index={index}
                 refetch={refetch}
+                setDeletingMechanic={setDeletingMechanic}
               ></MechanicRow>
             ))}
           </tbody>
         </table>
       </div>
+      {deletingMechanic && (
+        <DeleteConfirmModal
+          deletingMechanic={deletingMechanic}
+          refetch={refetch}
+          setDeletingMechanic={setDeletingMechanic}
+        ></DeleteConfirmModal>
+      )}
     </div>
   );
 };
