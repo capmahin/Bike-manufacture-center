@@ -12,7 +12,7 @@ const Service = ({ service, setFixing }) => {
       <div className="card-body items-center text-center">
         <h2 className=" text-2xl font-bold text-secondary">{name}</h2>
         <p>{description}</p>
-        <h4>{price}</h4>
+
         <h4>
           {minimum_quantitys.length > 0 ? (
             <span>{minimum_quantitys[0]}</span>
@@ -24,6 +24,9 @@ const Service = ({ service, setFixing }) => {
           {minimum_quantitys.length}
           {minimum_quantitys.length > 1 ? "spaces" : "spaces"} available
         </h4>
+        <p>
+          <small>Price:${price}</small>
+        </p>
         <div className="card-actions">
           <label
             htmlFor="booking-modal"
