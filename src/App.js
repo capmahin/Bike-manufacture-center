@@ -28,6 +28,7 @@ import Review1 from "./Pages/Reviews/Review1";
 
 import AddMechanic from "./Pages/Dashboard/AddMechanic";
 import MangeMechanic from "./Pages/Dashboard/MangeMechanic";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="users"
             element={
