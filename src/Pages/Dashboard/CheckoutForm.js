@@ -5,9 +5,11 @@ const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
-  const { price } = order;
+  const { price, buyer, buyerName } = order;
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
@@ -42,7 +44,30 @@ const CheckoutForm = ({ order }) => {
     });
 
     setCardError(error?.message || "");
+    setSuccess("");
+
+    //confirm card payment
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: buyerName,
+            email: buyer,
+          },
+        },
+      });
+
+    if (intentError) {
+      setCardError(intentError?.message);
+    } else {
+      setCardError("");
+      setTransactionId(paymentIntent.id);
+      console.log(paymentIntent);
+      setSuccess("Your payment is completed");
+    }
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -71,6 +96,15 @@ const CheckoutForm = ({ order }) => {
         </button>
       </form>
       {cardError && <p className="text-red-600">{cardError}</p>}
+      {success && (
+        <div className="text-green-600">
+          <p>{success}</p>
+          <p>
+            Your transaction Id:{" "}
+            <span className="text-orange-500 font-bold">{transactionId}</span>
+          </p>
+        </div>
+      )}
     </>
   );
 };
