@@ -6,10 +6,11 @@ const CheckoutForm = ({ order }) => {
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
+  const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
-  const { price, buyer, buyerName } = order;
+  const { _id, price, buyer, buyerName } = order;
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
@@ -45,6 +46,7 @@ const CheckoutForm = ({ order }) => {
 
     setCardError(error?.message || "");
     setSuccess("");
+    setProcessing(true);
 
     //confirm card payment
     const { paymentIntent, error: intentError } =
@@ -60,11 +62,32 @@ const CheckoutForm = ({ order }) => {
 
     if (intentError) {
       setCardError(intentError?.message);
+      setProcessing(false);
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
       console.log(paymentIntent);
       setSuccess("Your payment is completed");
+
+      //store payment on database
+      const payment = {
+        order: _id,
+        transactionId: paymentIntent.id,
+      };
+
+      fetch(`http://localhost:5000/booking/${_id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setProcessing(false);
+          console.log(data);
+        });
     }
   };
 
