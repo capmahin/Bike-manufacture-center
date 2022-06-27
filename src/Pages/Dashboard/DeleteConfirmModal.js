@@ -8,12 +8,15 @@ const DeleteConfirmModal = ({
 }) => {
   const { name, email } = deletingMechanic;
   const handleDelete = () => {
-    fetch(`http://localhost:5000/mechanic/${email}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://bike-manufacture-center-server.vercel.app/mechanic/${email}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

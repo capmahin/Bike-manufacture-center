@@ -14,7 +14,7 @@ const AvailableManufacture = ({ date }) => {
     refetch,
   } = useQuery(["available", formattedDate], () =>
     fetch(
-      `https://stark-caverns-25730.herokuapp.com/available?date=${formattedDate}`
+      `https://bike-manufacture-center-server.vercel.app/available?date=${formattedDate}`
     ).then((res) => res.json())
   );
   if (isLoading) {

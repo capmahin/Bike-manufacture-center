@@ -12,7 +12,7 @@ const MangeMechanic = () => {
     isLoading,
     refetch,
   } = useQuery("mechanics", () =>
-    fetch("http://localhost:5000/mechanic", {
+    fetch("https://bike-manufacture-center-server.vercel.app/mechanic", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

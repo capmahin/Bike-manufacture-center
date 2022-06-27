@@ -23,7 +23,7 @@ const BookingModal = ({ date, fixing, setFixing, refetch }) => {
       buyerName: user.displayName,
       phone: event.target.phone.value,
     };
-    fetch("http://localhost:5000/booking", {
+    fetch("https://bike-manufacture-center-server.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

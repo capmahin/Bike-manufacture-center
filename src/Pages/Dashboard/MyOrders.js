@@ -12,7 +12,7 @@ const MyOrders = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://stark-caverns-25730.herokuapp.com/booking?buyer=${user.email}`,
+        `https://bike-manufacture-center-server.vercel.app/booking?buyer=${user.email}`,
         {
           method: "GET",
           headers: {
@@ -50,7 +50,7 @@ const MyOrders = () => {
           </thead>
           <tbody>
             {orders.map((o, index) => (
-              <tr>
+              <tr key={o._id}>
                 <th>{index + 1}</th>
                 <td>{o.buyerName}</td>
                 <td>{o.date}</td>
@@ -63,7 +63,15 @@ const MyOrders = () => {
                     </Link>
                   )}
                   {o.price && o.paid && (
-                    <span className="text-success">Paid</span>
+                    <div>
+                      <p>
+                        <span className="text-success">Paid</span>
+                      </p>
+                      <p>
+                        Transaction id:
+                        <span className="text-success">{o.transactionId}</span>
+                      </p>
+                    </div>
                   )}
                 </td>
               </tr>

@@ -12,8 +12,8 @@ const AddMechanic = () => {
     reset,
   } = useForm();
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("https://stark-caverns-25730.herokuapp.com/service").then((res) =>
-      res.json()
+    fetch("https://bike-manufacture-center-server.vercel.app/service").then(
+      (res) => res.json()
     )
   );
   const imageStorageKey = "2607d506c9a008366c74644e1f8df27e";
@@ -37,7 +37,7 @@ const AddMechanic = () => {
             specialty: data.specialty,
             img: img,
           };
-          fetch("http://localhost:5000/mechanic", {
+          fetch("https://bike-manufacture-center-server.vercel.app/mechanic", {
             method: "POST",
             headers: {
               "content-type": "application/json",
